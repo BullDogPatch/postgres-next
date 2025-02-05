@@ -1,4 +1,5 @@
 import { db } from '@/utils/dbConnection';
+import Image from 'next/image';
 
 const SinglePlayerPage = async ({ params }) => {
   const { id } = await params;
@@ -13,7 +14,7 @@ const SinglePlayerPage = async ({ params }) => {
       {player.map((legend) => (
         <div key={legend.id}>
           <p>{legend.name}</p>
-          <img src={legend.src} alt={legend.name} className='w-[350px]' />
+          <Image src={legend.src} alt={legend.name} width={400} height={500} />
           <p>{legend.position}</p>
           <p>{'⭐'.repeat(legend.rating)}</p>
         </div>
