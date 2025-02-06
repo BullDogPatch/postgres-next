@@ -17,18 +17,60 @@ const PostPlayerForm = () => {
     revalidatePath('/players');
     redirect('/players');
   };
+
   return (
-    <form action={handleSubmit}>
-      <label htmlFor='name'>Name: </label>
-      <input type='text' name='name' id='name' />
-      <label htmlFor='src'>Image: </label>
-      <input type='text' name='src' id='src' />
-      <label htmlFor='rating'>Rating: </label>
-      <input type='number' name='rating' id='rating' />
-      <label htmlFor='position'>Postition: </label>
-      <input type='text' name='position' id='position' />
-      <button type='submit'>Submit</button>
-    </form>
+    <div className='flex justify-center items-center min-h-screen'>
+      <form action={handleSubmit} className='p-4 w-80'>
+        <label className='block mb-1' htmlFor='name'>
+          Name:
+        </label>
+        <input
+          type='text'
+          name='name'
+          id='name'
+          className='w-full p-2 mb-3 border rounded'
+        />
+
+        <label className='block mb-1' htmlFor='src'>
+          Image URL:
+        </label>
+        <input
+          type='text'
+          name='src'
+          id='src'
+          className='w-full p-2 mb-3 border rounded'
+        />
+
+        <label className='block mb-1' htmlFor='rating'>
+          Rating:
+        </label>
+        <input
+          type='number'
+          name='rating'
+          id='rating'
+          min='1'
+          max='10'
+          className='w-full p-2 mb-3 border rounded'
+        />
+
+        <label className='block mb-1' htmlFor='position'>
+          Position:
+        </label>
+        <input
+          type='text'
+          name='position'
+          id='position'
+          className='w-full p-2 mb-3 border rounded'
+        />
+
+        <button
+          type='submit'
+          className='w-full bg-gray-300 py-2 rounded hover:bg-gray-400'
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 
