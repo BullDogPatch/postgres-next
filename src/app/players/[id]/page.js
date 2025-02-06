@@ -3,20 +3,26 @@ import Image from 'next/image';
 
 const SinglePlayerPage = async ({ params }) => {
   const { id } = await params;
-  console.log(id);
+
   const { rows: player } = await db.query(
     `SELECT * FROM liverpool_legends WHERE id = $1`,
     [id]
   );
-  console.log(player);
+
   return (
-    <div className='h-[80vh]'>
+    <div className='h-[80vh] flex justify-center items-center'>
       {player.map((legend) => (
-        <div key={legend.id}>
-          <p>{legend.name}</p>
-          <Image src={legend.src} alt={legend.name} width={400} height={500} />
-          <p>{legend.position}</p>
-          <p>{'⭐'.repeat(legend.rating)}</p>
+        <div key={legend.id} className='p-4 rounded-md border-2 border-red-700'>
+          <p className='p-4 hover:underline'>{legend.name}</p>
+          <Image
+            src={legend.src}
+            alt={legend.name}
+            width={400}
+            height={500}
+            className='rounded-md m-4 border-2 border-red-700'
+          />
+          <p className='p-4'>{legend.position}</p>
+          <p className='p-4 text-lg'>{'⭐'.repeat(legend.rating)}</p>
         </div>
       ))}
     </div>
