@@ -28,7 +28,7 @@ const PostPlayerForm = () => {
           type='text'
           name='name'
           id='name'
-          className='w-full p-2 mb-3 border rounded'
+          className='text-slate-800 w-full p-2 mb-3 border rounded'
         />
 
         <label className='block mb-1' htmlFor='src'>
@@ -38,7 +38,7 @@ const PostPlayerForm = () => {
           type='text'
           name='src'
           id='src'
-          className='w-full p-2 mb-3 border rounded'
+          className='text-slate-800 w-full p-2 mb-3 border rounded'
         />
 
         <label className='block mb-1' htmlFor='rating'>
@@ -50,7 +50,7 @@ const PostPlayerForm = () => {
           id='rating'
           min='1'
           max='10'
-          className='w-full p-2 mb-3 border rounded'
+          className='text-slate-800 w-full p-2 mb-3 border rounded'
         />
 
         <label className='block mb-1' htmlFor='position'>
@@ -60,7 +60,7 @@ const PostPlayerForm = () => {
           type='text'
           name='position'
           id='position'
-          className='w-full p-2 mb-3 border rounded'
+          className='text-slate-800 w-full p-2 mb-3 border rounded'
         />
 
         <button
