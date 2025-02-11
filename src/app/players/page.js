@@ -8,7 +8,7 @@ export const metadata = {
 
 const PlayersPage = async () => {
   const { rows: players } = await db.query(`SELECT * FROM liverpool_legends`);
-  console.log(players);
+
   return (
     <div>
       <h3>Players Page</h3>

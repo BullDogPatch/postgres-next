@@ -1,5 +1,6 @@
 import { db } from '@/utils/dbConnection';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
 const SinglePlayerPage = async ({ params }) => {
   const { id } = await params;
@@ -8,6 +9,10 @@ const SinglePlayerPage = async ({ params }) => {
     `SELECT * FROM liverpool_legends WHERE id = $1`,
     [id]
   );
+
+  if (player.length === 0) {
+    notFound();
+  }
 
   return (
     <div className='h-[80vh] flex justify-center items-center'>
